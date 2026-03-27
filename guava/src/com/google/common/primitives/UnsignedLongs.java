@@ -410,6 +410,7 @@ public final class UnsignedLongs {
    * We move the static constants into this class so ProGuard can inline UnsignedLongs entirely
    * unless the user is actually calling a parse method.
    */
+  @SuppressWarnings("value:unary.increment") // static initializer for loop
   private static final class ParseOverflowDetection {
     private ParseOverflowDetection() {}
 
