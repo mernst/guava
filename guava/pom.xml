@@ -36,7 +36,7 @@
 
     <!-- Additional argument passed to the java compiler. Use to pass additional arguments
          to the checker framework. Example: -Ashowchecks -->
-    <checkerframework.extraargs></checkerframework.extraargs>
+    <checkerframework.extraargs>-Afilenames</checkerframework.extraargs>
 
     <!-- Additional argument passed to the java compiler. Use to pass additional arguments
          to the checker framework. Example: -Aannotations -->
