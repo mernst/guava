@@ -31,13 +31,17 @@ bit, the command lines below only run a single checker (the one for format
 strings).  First, you must run maven with the install target to get a copy of
 all the generated jar files in your local maven repository:
 
+```
 ./mvnw -V -B -U clean install -Dcheckerframework.checkers=org.checkerframework.checker.formatter.FormatterChecker  \
     -Dcheck.value.phase=skip -Dmaven.test.skip -Dmaven.javadoc.skip
+```
 
 Then you run the test suite:
 
+```
 MAVEN_OPTS=-Xmx6g ./mvnw -V -B -U verify -Dcheckerframework.checkers=org.checkerframework.checker.formatter.FormatterChecker \
                       -Dcheck.value.phase=skip -Dmaven.javadoc.skip
+```
 
 Running with the single FormatterChecker gets the total time down to about 20-25 minutes,
 almost all of which is testing. (Over 850,000 tests are run.)
