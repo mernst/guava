@@ -36,7 +36,7 @@
 
     <!-- Additional argument passed to the java compiler. Use to pass additional arguments
          to the checker framework. Example: -Ashowchecks -->
-    <checkerframework.extraargs>-Afilenames</checkerframework.extraargs>
+    <checkerframework.extraargs></checkerframework.extraargs>
 
     <!-- Additional argument passed to the java compiler. Use to pass additional arguments
          to the checker framework. Example: -Aannotations -->
@@ -146,13 +146,16 @@
               <Xmaxerrs>10000</Xmaxerrs>
               <Xmaxwarns>10000</Xmaxwarns>
             </compilerArguments>
-            <showWarnings>true</showWarnings>
+            <verbose>true</verbose>
             <!-- Default is verbose off, so you won't see stub parser warnings. -->
-            <verbose>${javac.verbose}</verbose>
+            <!-- <verbose>${javac.verbose}</verbose> -->
+            <showWarnings>true</showWarnings>
+            <showDeprecation>true</showDeprecation>
             <annotationProcessors>
               <annotationProcessor>${checkerframework.checkers}</annotationProcessor>
             </annotationProcessors>
             <compilerArgs combine.children="append">
+              <arg>-Afilenames</arg>
               <arg>${additionalargs}</arg>
               <arg>${checkerframework.extraargs}</arg>
               <arg>${checkerframework.extraargs2}</arg>
@@ -410,7 +413,7 @@
       </activation>
       <properties>
         <javac.version>9+181-r4173-1</javac.version>
-    <annotatedJdk>${org.checkerframework:jdk8:jar}</annotatedJdk>
+        <annotatedJdk>${org.checkerframework:jdk8:jar}</annotatedJdk>
       </properties>
       <dependencies>
         <dependency>
